@@ -1,0 +1,47 @@
+browser=chrome
+website=https://www.saucedemo.com/v1/index.html
+
+
+//Elements :
+Username=input[type='text']
+Password=input[type='password']
+
+Login =input[type='submit']
+
+Usernametext=standard_user
+passwordtext=secret_sauce
+
+
+passwordreq=Epic sadface: Password is required
+
+cart=svg[data-icon='shopping-cart']
+checkout=a[class='btn_action checkout_button']
+checkout1=CHECKOUT
+continue shopping =a[class='btn_secondary']
+
+threedots=div[class='bm-burger-button']
+allitems=a[id='inventory_sidebar_link']
+about=a[id='about_sidebar_link']
+logout=a[id='logout_sidebar_link']
+resertappstate=a[id='reset_sidebar_link']
+
+threedotsclose=position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; margin: 0px; padding: 0px; border: none; font-size: 0px; background: transparent; color: transparent; outline: none; cursor: pointer;
+
+addtocart=(//button[@class='btn_primary btn_inventory'])[2]
+remove=(//button[@class='btn_secondary btn_inventory'])[2]
+
+Firsttime=input[id='first-name']
+Lastname=input[id='last-name']
+postalcode=input[id='postal-code']
+
+Firstnametext=rajesh
+lastname=kancha
+post=500034
+
+checkoutconfirmation=input[class='btn_primary cart_button']
+
+Finish=FINISH
+cancel=CANCEL
+
+thankyou=THANK YOU FOR YOUR ORDER
+thankyou1=h2[class='complete-header']
