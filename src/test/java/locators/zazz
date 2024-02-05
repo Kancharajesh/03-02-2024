@@ -1,6 +1,6 @@
 browser=chrome
 website=https://www.saucedemo.com/v1/index.html
-
+Bank=https://parabank.parasoft.com/parabank/index.htm
 
 //Elements :
 Username=input[type='text']

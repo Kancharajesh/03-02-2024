@@ -1,10 +1,17 @@
 package Testcases;
 
+import java.io.File;
+import java.io.IOException;
+
 import javax.swing.plaf.basic.BasicSplitPaneDivider;
 import javax.swing.text.html.parser.Element;
 
+import org.apache.commons.io.FileUtils;
 import org.bouncycastle.oer.its.ieee1609dot2.basetypes.PublicEncryptionKey;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 import org.testng.annotations.Test;
@@ -19,8 +26,8 @@ public class login extends Basetest{
 	
 	
 	@Test
-	(priority = 0,enabled = true)
-	public static void logins() throws InterruptedException 
+	(priority = 1)
+	public static void login() throws InterruptedException 
 	{
 				//Enter Username & Password
 				driver.findElement(By.cssSelector(prop.getProperty("Username"))).sendKeys(prop.getProperty("Usernametext"));
@@ -29,10 +36,11 @@ public class login extends Basetest{
 				// click on login
 				driver.findElement(By.cssSelector(prop.getProperty("Login"))).click();	
 				
+				
     }
-	@Test
-	(priority = 1,enabled = true) 
-	public static void passwordmsg() throws InterruptedException
+	@Test 
+	(priority = 2)  
+	public static void checkoutallproducts() throws InterruptedException, IOException
 	{ 
 	
 		//Enter Username & Password
@@ -69,13 +77,23 @@ public class login extends Basetest{
 		driver.findElement(By.cssSelector(prop.getProperty("checkoutconfirmation"))).click();
 		driver.findElement(By.linkText(prop.getProperty("Finish"))).click();
 		
+		// screenshort.
+		TakesScreenshot screenshort = (TakesScreenshot)driver;
+		File Source = screenshort.getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(Source, new File ("C://tmp//2.png"));
+		
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeAsyncScript("Window.scrollBy (0,document.body.scrollheight)", null);
+		
+		
+		
 		//get text.
 		String	text = driver.findElement(By.cssSelector(prop.getProperty("thankyou1"))).getText();
 		System.out.println(text); 
-		driver.quit();
+		
 	}
-	
-	@Test(priority = 2,enabled = true)
+	 
+	@Test(priority = 3)
 	public static void Logout() throws InterruptedException
 	{
 		
@@ -92,8 +110,8 @@ public class login extends Basetest{
 				
 				//Logout.
 				driver.findElement(By.cssSelector(prop.getProperty("logout"))).click();
-				Thread.sleep(10000);	
-				driver.quit();
+				Thread.sleep(10000);	 
+				
 	}
 	
 	

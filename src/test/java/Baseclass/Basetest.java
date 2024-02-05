@@ -8,7 +8,9 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 import com.github.dockerjava.api.model.Driver;
@@ -23,10 +25,11 @@ public class Basetest
 	public static filereader fr;
 	public static Properties loc = new Properties();
 	public static filereader pr;
-
+	
+ 
  
 	
-	@BeforeTest
+	@BeforeMethod
 	public void setup() throws IOException{
 	 if (driver==null) {
 		 FileReader fr = new FileReader("C:\\Users\\ososa\\eclipse-workspace\\Zazz\\src\\test\\java\\locators\\zazz");
@@ -35,7 +38,7 @@ public class Basetest
 		loc.load(pr);
 		
 		
-		//else if 
+		//else if  
 		 
 	 }
 		
@@ -45,7 +48,7 @@ public class Basetest
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
-			driver.get(prop.getProperty("website"));
+			driver.get(prop.getProperty("Bank"));
 	 }	
 			else if (prop.getProperty("browser").equalsIgnoreCase("firefox")) {
 				WebDriverManager.firefoxdriver().setup(); // base
@@ -53,16 +56,16 @@ public class Basetest
 				driver.manage().window().maximize();
 				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 				driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
-				driver.get(prop.getProperty("website"));
+				driver.get(prop.getProperty("Bank"));
 	 }
 	 
 	}
 	
 	
-	@AfterTest
-	public void closeser () throws IOException{
+	@AfterMethod
+	public void closeser () {
 		
-		driver.quit();
+		driver.close();
 		
 		System.out.println("Basetest.close");
 		
