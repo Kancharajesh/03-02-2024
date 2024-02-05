@@ -12,6 +12,10 @@ public class filereader {
 		FileReader fr = new FileReader("C:\\Users\\ososa\\eclipse-workspace\\Zazz\\src\\test\\java\\locators\\zazz");
 		Properties p = new Properties();
 		p.load(fr);
+		FileReader pr = new FileReader("C:\\Users\\ososa\\eclipse-workspace\\Zazz\\src\\test\\java\\locators\\Bank");
+		Properties lo = new Properties();
+		lo.load(pr);
+		
 	}
 
 }

@@ -1,0 +1,51 @@
+Bank=https:https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC
+
+	//without Login.
+username =input[name='username']
+Userid=123456
+password=input[name='password']
+passwordid=123456
+login=input[type='submit']
+forgotlogin=Forgot login info?
+Register=Register
+Log Out=Log Out
+
+	//Register. 
+firstname=input[id='customer.firstName']
+lastname=input[id='customer.lastName']
+Address=input[id='customer.address.street']
+City=input[id='customer.address.city']
+State=input[id='customer.address.state']
+Zipcode=input[id='customer.address.zipCode']
+phonenumber=input[id='customer.phoneNumber']
+
+RUsername=input[id='customer.username']
+RPassword=input[id='customer.password']
+Confirmpassword=input[id='repeatedPassword']
+Registers=input[class='button']
+
+	//Afterlogin.
+ClickonHome =(//a[@href='/parabank/index.htm'])[2]
+
+OpenNewAccount=Open New Account
+AccountsOverview=Accounts Overview
+TransferFunds=Transfer Funds
+BillPay=Bill Pay
+FindTransactions=Find Transactions
+UpdateContact Info=Update Contact Info
+RequestLoan=Request Loan
+
+	//BIll PAY.
+payeename=input[name='payee.name']
+payeeaddress=input[name='payee.address.street']
+Payeecity=input[name='payee.address.city']
+payeestate=input[name='payee.address.state']
+payeeZipcode=input[name='payee.address.zipCode']
+Payeephonenumber=input[name='payee.phoneNumber']
+
+Payeeaccount=input[name='payee.accountNumber']
+payeeverifyaccount=input[name='verifyAccount']
+payeesendamount=input[value='Send Payment']
+payeeamount=input[name='amount']
+
+FromaccountDropdown=select[name='fromAccountId']
