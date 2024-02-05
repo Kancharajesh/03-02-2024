@@ -21,7 +21,8 @@ public class Basetest
 	public static WebDriver driver;
 	public static Properties prop = new Properties();
 	public static filereader fr;
-	
+	public static Properties loc = new Properties();
+	public static filereader pr;
 
  
 	
@@ -30,6 +31,8 @@ public class Basetest
 	 if (driver==null) {
 		 FileReader fr = new FileReader("C:\\Users\\ososa\\eclipse-workspace\\Zazz\\src\\test\\java\\locators\\zazz");
 		prop.load(fr);
+		FileReader pr = new FileReader("C:\\Users\\ososa\\eclipse-workspace\\Zazz\\src\\test\\java\\locators\\Bank");
+		loc.load(pr);
 		
 		
 		//else if 
